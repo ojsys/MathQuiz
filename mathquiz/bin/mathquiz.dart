@@ -33,19 +33,18 @@ void main() {
     MathQuestion("30 - 17", 30 - 17),
     MathQuestion("110 * 12", 110 * 12),
     MathQuestion("12 / 12", 12 / 12),
-    MathQuestion("15 / 4", 15 / 3),
+    MathQuestion("15 / 3", 15 / 3),
   ];
-
+  int score = 0;
   for (MathQuestion mathQuestion in questions) {
     //Get user's answer
     double userAnswer = promptDouble(mathQuestion.question);
     //check if answer is correct or not
     if (userAnswer == mathQuestion.answer) {
-      print("You are correct!");
-      print("........................");
-    } else {
-      print("Incorrect, the answer was ${mathQuestion.answer}");
+      score++;
       print("........................");
     }
   }
+
+  print("You got ${score} out of ${questions.length}");
 }
